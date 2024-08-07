@@ -14,7 +14,7 @@ require_once('combinaisons.php');
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>loto application pout gagner le million</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
