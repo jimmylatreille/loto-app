@@ -25,6 +25,7 @@ require_once('combinaisons.php');
       <?php
       $loto = new Loto();
 
+      $calculateRangeDistribution = Loto::calculateRangeDistribution($combinations);
       $findNumberFrequencyByPosition = Loto::findNumberFrequencyByPosition($combinations);
       $findMostPopularNumbers = Loto::findMostPopularNumbers($combinations);
       $calculateEvenOddPercentages = Loto::calculateEvenOddPercentages($combinations);
@@ -53,8 +54,12 @@ require_once('combinaisons.php');
       print_r($findMostPopularPattern);
       echo " <hr>";
 
-       echo "findNumberFrequencyByPosition Combinations:\n";
+      echo "findNumberFrequencyByPosition Combinations:\n";
       print_r($findNumberFrequencyByPosition);
+      echo " <hr>";
+
+      echo "calculateRangeDistribution Combinations:\n";
+      print_r($calculateRangeDistribution);
       echo " <hr>";
       ?>
     </code>
