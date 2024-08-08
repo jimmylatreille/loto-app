@@ -13,28 +13,39 @@ require_once('combinaisons.php');
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>loto application pout gagner le million</title>
+  <title>loto App</title>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-  <h1>Loto winner script</h1>
+  <h1>Loto winner algo</h1>
   <hr>
   <pre>
     <code>
       <?php
-
       $loto = new Loto();
-      $calculateEvenOddPercentages = Loto::calculateEvenOddPercentages($combinations);
-      $mostCommonCategories = Loto::findMostCommonCategories(Loto::categorizeNumbers($combinations));
 
-      echo "\ncalculateEvenOddPercentages Combinations:\n";
+      $findMostPopularNumbers = Loto::findMostPopularNumbers($combinations);
+      $calculateEvenOddPercentages = Loto::calculateEvenOddPercentages($combinations);
+      $categorizedCombinations = Loto::categorizeNumbers($combinations);
+      $mostCommonCategories = Loto::findMostCommonCategories($categorizedCombinations);
+      $findMostPopularPattern = Loto::findMostPopularPattern($categorizedCombinations);
+
+      echo "findMostPopularNumbers Combinations:\n";
+      print_r($findMostPopularNumbers);
+      echo " <hr>";
+
+      echo "calculateEvenOddPercentages Combinations:\n";
       print_r($calculateEvenOddPercentages);
-      echo "<hr>";
+      echo " <hr>";
 
       echo "\nMost Common Categories by Position:\n";
       print_r($mostCommonCategories);
-      echo "<hr>";
+      echo " <hr>";
+
+      echo "\nMost Common Categories by Position:\n";
+      print_r($findMostPopularPattern);
+      echo " <hr>";
       ?>
     </code>
   </pre>
