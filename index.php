@@ -25,26 +25,36 @@ require_once('combinaisons.php');
       <?php
       $loto = new Loto();
 
+      $findNumberFrequencyByPosition = Loto::findNumberFrequencyByPosition($combinations);
       $findMostPopularNumbers = Loto::findMostPopularNumbers($combinations);
       $calculateEvenOddPercentages = Loto::calculateEvenOddPercentages($combinations);
       $categorizedCombinations = Loto::categorizeNumbers($combinations);
       $mostCommonCategories = Loto::findMostCommonCategories($categorizedCombinations);
       $findMostPopularPattern = Loto::findMostPopularPattern($categorizedCombinations);
 
-      echo "findMostPopularNumbers Combinations:\n";
+
+      echo "\nfindMostPopularNumbers Combinations:\n";
       print_r($findMostPopularNumbers);
       echo " <hr>";
 
-      echo "calculateEvenOddPercentages Combinations:\n";
+      echo "\ncalculateEvenOddPercentages Combinations:\n";
       print_r($calculateEvenOddPercentages);
       echo " <hr>";
 
-      echo "\nMost Common Categories by Position:\n";
+      echo "\ncategorizedCombinations Combinations:\n";
+      print_r($categorizedCombinations);
+      echo " <hr>";
+
+      echo "\nmostCommonCategories by Position:\n";
       print_r($mostCommonCategories);
       echo " <hr>";
 
-      echo "\nMost Common Categories by Position:\n";
+      echo "\nfindMostPopularPattern by Position:\n";
       print_r($findMostPopularPattern);
+      echo " <hr>";
+
+       echo "findNumberFrequencyByPosition Combinations:\n";
+      print_r($findNumberFrequencyByPosition);
       echo " <hr>";
       ?>
     </code>
