@@ -114,7 +114,7 @@ class Loto {
     public static function calculateRangeDistribution(array $combinations): array {
         $ranges = [1 => '1-10', 11 => '11-20', 21 => '21-30', 31 => '31-40', 41 => '41-49'];
         $rangeCounts = array_fill_keys(array_values($ranges), 0);
-        $totalNumbers = count($combinations) * count($combinations[0]);
+        $totalNumbers = count($combinations) * count(reset($combinations));
 
         foreach ($combinations as $combination) {
             foreach ($combination as $num) {
@@ -126,7 +126,6 @@ class Loto {
                 }
             }
         }
-
         return array_map(function($count) use ($totalNumbers) {
             return round(($count / $totalNumbers) * 100, 2);
         }, $rangeCounts);
