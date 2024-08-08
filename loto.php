@@ -130,4 +130,22 @@ class Loto {
             return round(($count / $totalNumbers) * 100, 2);
         }, $rangeCounts);
     }
+
+    public static function calculatePairwiseOccurrences(array $combinations): array {
+        $pairCounts = [];
+
+        foreach ($combinations as $combination) {
+            $numCount = count($combination);
+            for ($i = 0; $i < $numCount; $i++) {
+                for ($j = $i + 1; $j < $numCount; $j++) {
+                    $pair = [min($combination[$i], $combination[$j]), max($combination[$i], $combination[$j])];
+                    $pairKey = implode(',', $pair);
+                    $pairCounts[$pairKey] = ($pairCounts[$pairKey] ?? 0) + 1;
+                }
+            }
+        }
+
+        arsort($pairCounts);
+        return $pairCounts;
+    }
 }
